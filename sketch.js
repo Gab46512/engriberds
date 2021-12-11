@@ -33,8 +33,9 @@ function setup(){
     passarro = new pessego(0, 0)
 }
 
+//dreu
 function draw(){    
-    background(SuperIdol);
+    background(SupeerIdol);
     Engine.update(engine);
     //fileira1
     box1.display();
