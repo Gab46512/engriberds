@@ -6,12 +6,15 @@ var engine, world;
 var box1;
 var SuperIdol;
 
+function preload(){
+    //super idol
+    SuperIdol = loadImage("super idol.png");
+}
+
 function setup(){
     var canvas = createCanvas(1200,400);
     engine = Engine.create();
     world = engine.world;
-    //super idol
-    SuperIdol = loadImage("super idol.png");
 
     //fileira 1
     box1 = new Box(650,370,50,50);
@@ -28,14 +31,16 @@ function setup(){
     taubate3 = new Tauba(650,160,120,PI/7);
     taubate4 = new Tauba(790,160,120,PI/-7);
     //chão
-    ground = new Ground(600,height,1200,20)
+    ground = new Ground(600,height,1200,20);
     //bem te vi
-    passarro = new pessego(0, 0)
+    passarro = new pessego(0, 0);
+    //tacaleopaunomenino
+    taubate5 = new Tauba(200,200,40,PI/2);
+    restrisaum = new TACALEOPAU(passarro.body,taubate5.body);
 }
-
 //dreu
 function draw(){    
-    background(SupeerIdol);
+    background(SuperIdol);
     Engine.update(engine);
     //fileira1
     box1.display();
@@ -58,4 +63,7 @@ function draw(){
     fill(255);
     stroke(0);
     text(Math.round(mouseX) + "," + Math.round(mouseY), mouseX, mouseY);
+    //tacaleopaunomeninoemorreu
+    taubate5.display();
+    restrisaum.display();
 }
