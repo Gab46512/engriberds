@@ -35,8 +35,8 @@ function setup(){
     //bem te vi
     passarro = new pessego(0, 0);
     //tacaleopaunomenino
-    taubate5 = new Tauba(200,200,40,PI/2);
-    restrisaum = new TACALEOPAU(passarro.body,taubate5.body);
+    //taubate5 = new Tauba(200,200,40,PI/2);
+    restrisaum = new TACALEOPAU(passarro.body,{x:153,y:205});
 }
 //dreu
 function draw(){    
@@ -64,6 +64,16 @@ function draw(){
     stroke(0);
     text(Math.round(mouseX) + "," + Math.round(mouseY), mouseX, mouseY);
     //tacaleopaunomeninoemorreu
-    taubate5.display();
+    //taubate5.display();
     restrisaum.display();
+}
+
+//arrasta o menino, esfrega o menino
+function mouseDragged() {
+    Matter.Body.setPosition(passarro.body,{x:mouseX,y:mouseY})
+}
+
+//tacaleomeninononpau
+function mouseReleased() {
+    restrisaum.fly()
 }

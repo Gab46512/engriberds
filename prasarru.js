@@ -4,8 +4,8 @@ class pessego extends BaseClass {
         this.image = loadImage("passaru.png");
     }
     display() {
-        this.body.position.x = mouseX;
-        this.body.position.y = mouseY;
+        //this.body.position.x = mouseX;
+        //this.body.position.y = mouseY;
         super.display();
     }
 }

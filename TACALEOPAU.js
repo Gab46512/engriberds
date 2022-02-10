@@ -1,17 +1,22 @@
 class TACALEOPAU {
-    constructor(bodya, bodyb) {
+    constructor(bodya, pointb) {
       var options = {
           bodyA:bodya,
-          bodyB:bodyb,
+          pointB:pointb,
           stiffness:0.04,
           length:10
       }
       this.chain = Matter.Constraint.create(options);
-      
+      this.pointB = pointb;
       World.add(world, this.chain);
     }
     display(){
-      line(this.chain.bodyA.position.x,this.chain.bodyA.position.y,this.chain.bodyB.position.x,this.chain.bodyB.position.y);
+      if (this.chain.bodyA){
+        line(this.chain.bodyA.position.x,this.chain.bodyA.position.y,this.pointB.x,this.pointB.y);
+    }
+    }
+    fly() {
+      this.chain.bodyA = null;
     }
   };
   
