@@ -33,10 +33,10 @@ function setup(){
     //chão
     ground = new Ground(600,height,1200,20);
     //bem te vi
-    passarro = new pessego(0, 0);
+    passarro = new pessego(120, 195);
     //tacaleopaunomenino
     //taubate5 = new Tauba(200,200,40,PI/2);
-    restrisaum = new TACALEOPAU(passarro.body,{x:153,y:205});
+    restrisaum = new TACALEOPAU(passarro.body,{x:118,y:217});
 }
 //dreu
 function draw(){    
